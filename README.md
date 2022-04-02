@@ -17,7 +17,7 @@ s’appelle un Splash Screen.
 
 ####  Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/3.%20Login/WhatsApp%20Video%202022-04-02%20at%2011.09.02%20AM.mp4)
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
