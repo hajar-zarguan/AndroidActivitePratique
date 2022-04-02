@@ -15,11 +15,15 @@ première Activité et les envoyer à la deuxième activité pour les afficher. 
 démarrage de l’application se fait en premier lieu avec un écran de d’accueil qui
 s’appelle un Splash Screen.
 
+
 ####  Screenshots
+https://user-images.githubusercontent.com/82539023/161381839-d168dccf-abea-444e-9816-d9d060bb33e2.mp4
 
-![App Screenshot](https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/3.%20Login/WhatsApp%20Video%202022-04-02%20at%2011.09.02%20AM.mp4| width=50)
+https://user-images.githubusercontent.com/82539023/161381856-2131b556-0f1e-4774-bac3-3f5e2dd05a13.mp4
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+
 
 
 ## 4. Shared Preferences  
