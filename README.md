@@ -17,7 +17,7 @@ s’appelle un Splash Screen.
 
 ####  Screenshots
 
-![App Screenshot](https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/3.%20Login/WhatsApp%20Video%202022-04-02%20at%2011.09.02%20AM.mp4)
+![App Screenshot](https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/3.%20Login/WhatsApp%20Video%202022-04-02%20at%2011.09.02%20AM.mp4| width=50)
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
@@ -29,14 +29,15 @@ s’appelle un Splash Screen.
 
 ####  Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.47.32%20AM.jpeg" width="300" >      <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.47.39%20AM.jpeg" width="300" >    <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.47.46%20AM.jpeg" width="300" >
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.48.55%20AM.jpeg" width="300" >      <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.47.58%20AM.jpeg" width="300" >    <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.48.53%20AM.jpeg" width="300" >
+   
 
 ## 4. Read and write from internal file 
  le code source d'une application qui permet de 
 
 ####  Screenshots
+<img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/5.%20ReadFileWrite/Red.JPG" width="300" >
 
-![App Screenshot](https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/5.%20ReadFileWrite/Red.JPG)
 
