@@ -33,4 +33,10 @@ s’appelle un Splash Screen.
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
+## 4. Read and write from internal file 
+ le code source d'une application qui permet de 
+
+####  Screenshots
+
+![App Screenshot](https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/5.%20ReadFileWrite/Red.JPG)
 
