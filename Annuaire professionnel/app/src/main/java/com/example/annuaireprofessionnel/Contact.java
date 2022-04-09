@@ -1,16 +1,15 @@
-package com.jsoncontacts.models;
-
+package com.example.annuaireprofessionnel;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-//import androidx.room.verifier.ColumnInfo;
 
 import java.io.Serializable;
 
 @Entity
 public class Contact implements Serializable {
+
     @PrimaryKey(autoGenerate = true)
     private int ID;
     @ColumnInfo(name = "FirstName")
@@ -35,7 +34,7 @@ public class Contact implements Serializable {
         this.phone = phone;
         this.email = email;
     }
-    @Ignore
+@Ignore
     public Contact(String firstName, String lastName, String job, String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;

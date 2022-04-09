@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AnnuaireProfessionnel" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/AccentColor</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/SecondColor</item>
+        <item name="colorSecondaryVariant">@color/AccentColor</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.AnnuaireProfessionnel.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="h1">
+        <item name="fontWeight">120</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="h2">
+        <item name="fontWeight">100</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="h3">
+        <item name="fontWeight">60</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="Theme.AnnuaireProfessionnel.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AnnuaireProfessionnel.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

@@ -1,4 +1,5 @@
-package com.jsoncontacts.adapters;
+package com.example.annuaireprofessionnel;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -8,12 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.jsoncontacts.MainActivity;
-import com.jsoncontacts.R;
-import com.jsoncontacts.databaseService.AppDataBase;
-import com.jsoncontacts.models.Contact;
+import androidx.room.RoomDatabase;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     private MainActivity mainActivity;
     private Context ctx;
 
-    public ContactsAdapter(List<Contact> contactsList, Activity context, SelectedContact selectedContact, MainActivity mainActivity) {
+    public ContactsAdapter(List<Contact> contactsList, Activity context,SelectedContact selectedContact,MainActivity mainActivity) {
         this.contactsList = contactsList;
         this.mainActivity=mainActivity;
         this.selectedContact=selectedContact;
@@ -38,8 +37,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     @Override
     public ContactsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        ctx=parent.getContext();
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.single_contact,parent,false);
+       ctx=parent.getContext();
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_recycler_view,parent,false);
         return new ViewHolder(view,ctx);
 
     }
@@ -49,15 +48,15 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ContactsAdapter.ViewHolder holder, int position) {
-        Contact contact=contactsList.get(position);
+    Contact contact=contactsList.get(position);
 
-        database=AppDataBase.getInstance(context);
+    database=AppDataBase.getInstance(context);
 
-        holder.id.setText(String.valueOf(contact.getID()));
-        holder.email.setText(contact.getEmail());
-        holder.job.setText(contact.getJob());
-        holder.name.setText(contact.getFirstName()+" "+contact.getLastName());
-        holder.phone.setText(contact.getPhone());
+    holder.id.setText(String.valueOf(contact.getID()));
+    holder.email.setText(contact.getEmail());
+    holder.job.setText(contact.getJob());
+    holder.name.setText(contact.getFirstName()+" "+contact.getLastName());
+    holder.phone.setText(contact.getPhone());
     }
 
 
@@ -72,11 +71,12 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         Context context;
         public ViewHolder(@NonNull View itemView,Context context) {
             super(itemView);
-            name=itemView.findViewById(R.id.name);
-            email=itemView.findViewById(R.id.email);
-            job=itemView.findViewById(R.id.job);
-            phone=itemView.findViewById(R.id.phone);
-            btCall=itemView.findViewById(R.id.call);
+            id=itemView.findViewById(R.id.ID);
+            name=itemView.findViewById(R.id.Name);
+            email=itemView.findViewById(R.id.Email);
+            job=itemView.findViewById(R.id.Job);
+            phone=itemView.findViewById(R.id.Tel);
+            btCall=itemView.findViewById(R.id.phone_btn);
             this.context=context;
             itemView.setOnLongClickListener(this::onLongClick);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -126,4 +126,3 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         void selectedContact(Contact contact);
     }
 }
-

@@ -3,21 +3,22 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdkVersion 31
 
 
     defaultConfig {
-        applicationId "com.jsoncontacts"
-        minSdk 16
-        targetSdk 32
+        applicationId "com.example.annuaireprofessionnel"
+        minSdkVersion 16
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -28,34 +29,24 @@ android {
 }
 
 dependencies {
-    // basic
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+
+
+
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
-    //images
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
-
-    //recycler view
-    implementation "androidx.recyclerview:recyclerview:1.2.0"
-    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
-    implementation "androidx.cardview:cardview:1.0.0"
-
-    // for json implementation 'com.google.code.gson:gson:2.9.0'
-
-    //roooom
-    implementation 'androidx.room:room-common:2.4.2'
-    implementation 'androidx.room:room-runtime:2.4.2'
+    //annotation
     annotationProcessor 'android.arch.persistence.room:compiler:2.4.2-alpha1'
     implementation 'android.arch.persistence.room:runtime:2.4.2'
-    annotationProcessor 'androidx.room:room-compiler:2.4.2'
-
-
-   // fragmennt
+    //
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'androidx.navigation:navigation-fragment:2.2.2'
+
+    implementation "androidx.recyclerview:recyclerview:1.2.0"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
+    implementation "androidx.cardview:cardview:1.0.0"
 
 }
