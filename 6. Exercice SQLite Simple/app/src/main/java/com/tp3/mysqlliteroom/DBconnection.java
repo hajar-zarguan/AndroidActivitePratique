@@ -1,5 +1,5 @@
-package com.example.dbexo;
 
+package  com.tp3.mysqlliteroom;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

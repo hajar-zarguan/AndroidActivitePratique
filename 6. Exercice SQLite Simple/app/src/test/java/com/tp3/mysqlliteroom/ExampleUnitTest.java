@@ -1,4 +1,4 @@
-package com.example.dbexo;
+package com.tp3.mysqlliteroom;
 
 import org.junit.Test;
 
