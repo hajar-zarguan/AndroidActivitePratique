@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "first_name": "Hiba",
+      "last_name": "Salemi",
+      "photo": "image2.png",
+      "job": "full stack developer",
+      "email": "Hiba.salemi@gmail.com",
+      "phone": "0628294375"
+    },
+    {
+      "id": 2,
+      "first_name": "Salwa",
+      "photo": "image4.jpg",
+      "last_name": "El Afarissi",
+      "job": "MERN developer",
+      "email": "s.farissi@gmail.com",
+      "phone": "0661568712"
+    },
+    {
+      "id": 3,
+      "first_name": "Abir",
+      "photo": "image5.jpg",
+      "last_name": "Lahmidi",
+      "job": "Mobile Developer",
+      "email": "r.lahmidi@gmail.com",
+      "phone": "0618312546"
+    },
+    {
+      "id": 4,
+      "first_name": "Leila",
+      "last_name": "Khalil",
+      "photo": "image6.jpg",
+      "job": "Devops Engineer",
+      "email": "l.khalil@gmail.com",
+      "phone": "0618654532"
+    },
+    {
+      "id": 5,
+      "first_name": "Nabil",
+      "photo": "image7.jpg",
+      "last_name": "Hachimi",
+      "job": "Data Engineer",
+      "email": "n.hachimi@gmail.com",
+      "phone": "0617656538"
+    },
+  {
+    "id": 6,
+    "first_name": "Houdaifa",
+    "last_name": "Saadaoui",
+    "photo": "image3.png",
+    "job": "Project Manager",
+    "email": "h.Saadaoui@gmail.com",
+    "phone": "0678654459"
+  },
+  {
+    "id": 7,
+    "first_name": "hilal",
+    "last_name": "mansouri",
+    "photo": "image8.jpg",
+    "job": "Project Manager",
+    "email": "h.mansouri@gmail.com",
+    "phone": "0678654459"
+  }
+  ]
+
