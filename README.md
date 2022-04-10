@@ -36,10 +36,31 @@ https://user-images.githubusercontent.com/82539023/161381856-2131b556-0f1e-4774-
 <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.47.32%20AM.jpeg" width="300" >      <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.47.39%20AM.jpeg" width="300" >    <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.47.46%20AM.jpeg" width="300" >  <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.48.55%20AM.jpeg" width="300" >      <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.47.58%20AM.jpeg" width="300" >    <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/4.%20Shared%20preferences/WhatsApp%20Image%202022-04-01%20at%2010.48.53%20AM.jpeg" width="300" >
    
 
-## 4. Read and write from internal file 
+## 5. Read and write from internal file 
  le code source d'une application qui permet de 
 
 ####  Screenshots
 <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/5.%20ReadFileWrite/Red.JPG" width="300" >
+
+## 6. SQLite simple exercice  Using SQLiteOpenHelper
+ le code source d'une application qui permet de 
+
+####  Screenshots
+<img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/6.%20SQLite/WhatsApp%20Image%202022-04-09%20at%204.48.36%20PM.jpeg" > 
+<img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/6.%20SQLite/WhatsApp%20Image%202022-04-09%20at%204.49.50%20PM.jpeg"  >
+
+## 7. Exercice Room Database SQLite 
+ le code source d'une application qui permet de 
+
+####  Screenshots
+<img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/7.%20SQLite%20Room/WhatsApp%20Image%202022-04-09%20at%204.24.33%20PM%20(1).jpeg" width="300" >  <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/7.%20SQLite%20Room/WhatsApp%20Image%202022-04-09%20at%204.24.33%20PM%20(2).jpeg" width="300" >  <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/7.%20SQLite%20Room/WhatsApp%20Image%202022-04-09%20at%204.24.33%20PM.jpeg" width="300" >  <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/7.%20SQLite%20Room/WhatsApp%20Image%202022-04-09%20at%204.24.34%20PM.jpeg" width="300" >
+
+
+
+## 8. Contact App Load Data from Json File 
+ le code source d'une application qui permet de 
+
+####  Screenshots
+<img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/8.%20JsonContact/WhatsApp%20Image%202022-04-09%20at%202.55.10%20PM.jpeg" width="300" > <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/8.%20JsonContact/WhatsApp%20Image%202022-04-09%20at%202.55.11%20PM.jpeg" width="300" > <img src="https://github.com/hajar-zarguan/AndroidActivitePratique/blob/main/Capture%20d'%C3%A9cran/8.%20JsonContact/WhatsApp%20Image%202022-04-09%20at%202.55.49%20PM.jpeg" width="300" >
 
 
