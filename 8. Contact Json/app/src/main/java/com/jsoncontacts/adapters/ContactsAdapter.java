@@ -60,6 +60,7 @@ public class ContactsAdapter extends BaseAdapter {
         Button call = view1.findViewById(R.id.call);
         Button sms = view1.findViewById(R.id.sms);
 
+
         Button delete = view1.findViewById(R.id.delete);
 
         Button update = view1.findViewById(R.id.update);

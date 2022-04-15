@@ -2,6 +2,7 @@ package com.jsoncontacts.databaseService;
 
 import android.content.Context;
 
+
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -14,7 +15,7 @@ public abstract class AppDataBase extends RoomDatabase {
         private static AppDataBase database;
 
         // Define database name
-        private static String DATABASE_NAME="db";
+        private static String DATABASE_NAME="db_Contact";
 
         public synchronized static AppDataBase getInstance(Context context)
         {

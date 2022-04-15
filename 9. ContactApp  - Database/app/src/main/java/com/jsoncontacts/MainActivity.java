@@ -25,28 +25,26 @@ import com.jsoncontacts.models.Contact;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements ContactsAdapter.SelectedContact{
 
     RecyclerView recyclerView;
     AppDataBase db;
     List<Contact> contacts;
     LinearLayoutManager linearLayoutManager;
-   // String jsonFileString = "";
+
+    Contact contact1 = new Contact("Hajar", "Zarguan", "Ingénieur d'état", "0678119921", "hqjar.err98@gmail.com");
+    Contact contact2 = new Contact("Hiba", "Sadiki", "Technicien spécialisé", "0610969037", "hiba.sadiki@gmail.com");
+    Contact contact3 = new Contact("Houda", "Alaoui", "Ched de service", "0625867047", "houda.alaoui@gmail.com");
+    Contact contact4 = new Contact("Siham", "lamine", "Directrice ", "0612345678", "siham.lamine@gmail.com");
+    Contact contact5 = new Contact("Lamia", "Aron", "Superviseur", "0612326598", "lamia.aron@gmail.com");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        Contact contact1 = new Contact("Ayoub", "LAMINE SADIKI", "Ingénieur d'état", "0678119921", "sadiki.err98@gmail.com");
-        Contact contact2 = new Contact("Amine", "Sadiki", "Technicien spécialisé", "0610969037", "amine.sadiki@gmail.com");
-        Contact contact3 = new Contact("Ahmed", "Alaoui", "Ched de service", "0625867047", "ahmed.alaoui@gmail.com");
-        Contact contact4 = new Contact("Siham", "lamine", "Directrice ", "0612345678", "siham.lamine@gmail.com");
-        Contact contact5 = new Contact("Jack", "Aron", "Superviseur", "+33612326598", "jack.aron@gmail.com");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Toolbar toolbar = findViewById(R.id.toolbar);
-        // Toolbar toolbar = findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+       //  Toolbar toolbar = findViewById(R.id.toolbar);
+       // setSupportActionBar(toolbar);
 
         db = AppDataBase.getInstance(this);
         db.contactDAO().insert(contact1);
@@ -54,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         db.contactDAO().insert(contact3);
         db.contactDAO().insert(contact4);
         db.contactDAO().insert(contact5);
+
         contacts = db.contactDAO().getAll();
         ContactsAdapter adapter = new ContactsAdapter(contacts, this, this, this);
 
@@ -101,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
+    /////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -143,8 +145,8 @@ public class MainActivity extends AppCompatActivity {
             myIntent.putExtra("ID",String.valueOf(contact.getID()));
             startActivity(myIntent);
         }
-        void RefreshListView(List<Contact> contacts){
-            ContactsAdapter adapter = new ContactsAdapter(contacts,this,selectedContact();,this);
+        public void RefreshListView(List<Contact> contacts){
+            ContactsAdapter adapter = new ContactsAdapter(contacts,this,this,this);
             recyclerView.setAdapter(adapter);
         }
 

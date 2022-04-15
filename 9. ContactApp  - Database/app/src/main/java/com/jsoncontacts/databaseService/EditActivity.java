@@ -23,7 +23,7 @@ public class EditActivity  extends AppCompatActivity {
     EditText phone;
     EditText job;
     String string;
-    TextView id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +61,7 @@ public class EditActivity  extends AppCompatActivity {
     public void save(View view){
 
         database.contactDAO().update(new Contact(Integer.parseInt(string),firstName.getText().toString(),lastName.getText().toString(),email.getText().toString(),job.getText().toString(),phone.getText().toString()));
-        Toast.makeText(EditActivity.this,"Updated",Toast.LENGTH_SHORT).show();
+        Toast.makeText(EditActivity.this,"modifier",Toast.LENGTH_SHORT).show();
         Intent myIntent = new Intent(EditActivity.this, MainActivity.class);
         startActivity(myIntent);
     }

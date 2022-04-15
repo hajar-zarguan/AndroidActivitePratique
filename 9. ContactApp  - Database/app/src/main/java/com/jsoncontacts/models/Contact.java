@@ -1,11 +1,11 @@
 package com.jsoncontacts.models;
 
 
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-//import androidx.room.verifier.ColumnInfo;
 
 import java.io.Serializable;
 
@@ -26,16 +26,16 @@ public class Contact implements Serializable {
     @Ignore
     public Contact() {
     }
-
+    @Ignore
     public Contact(Integer ID, String firstName, String lastName, String job, String phone, String email) {
-        this.ID = ID;
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.job = job;
         this.phone = phone;
         this.email = email;
     }
-    @Ignore
+
     public Contact(String firstName, String lastName, String job, String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
