@@ -26,19 +26,12 @@ public class addActivity extends AppCompatActivity {
         database=AppDataBase.getInstance(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_contact);
-        firstName = (EditText) findViewById(R.id.name);
-        email = (EditText) findViewById(R.id.email);
-        phone = (EditText) findViewById(R.id.phone);
-        job = (EditText) findViewById(R.id.job);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        firstName = (EditText) findViewById(R.id.name_edit);
+        firstName = (EditText) findViewById(R.id.prenom_edit);
+        email = (EditText) findViewById(R.id.email_edit);
+        phone = (EditText) findViewById(R.id.phone_Edittxt);
+        job = (EditText) findViewById(R.id.job_edit);
 
-                Intent myIntent = new Intent(addActivity.this, MainActivity.class);
-                startActivity(myIntent);
-            }
-        });
     }
     public void save(View view){
 

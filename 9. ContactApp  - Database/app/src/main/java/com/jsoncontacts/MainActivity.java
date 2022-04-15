@@ -1,12 +1,19 @@
 package com.jsoncontacts;
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -19,6 +26,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jsoncontacts.adapters.ContactsAdapter;
 import com.jsoncontacts.databaseService.AppDataBase;
 import com.jsoncontacts.databaseService.EditActivity;
+import com.jsoncontacts.databaseService.addActivity;
 import com.jsoncontacts.models.Contact;
 
 
@@ -42,11 +50,12 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Toolbar toolbar = findViewById(R.id.toolbar);
+       //  Toolbar toolbar = findViewById(R.id.toolbar);
        //  Toolbar toolbar = findViewById(R.id.toolbar);
        // setSupportActionBar(toolbar);
 
         db = AppDataBase.getInstance(this);
+
         db.contactDAO().insert(contact1);
         db.contactDAO().insert(contact2);
         db.contactDAO().insert(contact3);
@@ -55,7 +64,6 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
 
         contacts = db.contactDAO().getAll();
         ContactsAdapter adapter = new ContactsAdapter(contacts, this, this, this);
-
         recyclerView = (RecyclerView) findViewById(R.id.list);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -68,11 +76,51 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+
+                //Intent myIntent = new Intent(MainActivity.this, addActivity.class);
+                //startActivity(myIntent);
+
+                final Dialog dialog = new Dialog(MainActivity.this);
+                dialog.setContentView(R.layout.manage_contact);
+                dialog.setCancelable(true);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                EditText name = dialog.findViewById(R.id.name_edit);
+                EditText prenom = dialog.findViewById(R.id.prenom_edit);
+                EditText email = dialog.findViewById(R.id.email_edit);
+                EditText job = dialog.findViewById(R.id.job_edit);
+                EditText phone = dialog.findViewById(R.id.phone_Edittxt);
+                Button create = dialog.findViewById(R.id.create);
+                create.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (TextUtils.isEmpty(name.getText().toString().trim()) || TextUtils.isEmpty(email.getText().toString().trim() )|| TextUtils.isEmpty(job.getText().toString().trim()) || TextUtils.isEmpty(phone.getText().toString().trim())) {
+                            Toast.makeText(MainActivity.this, "Sil vous plqite rend tout les champs !", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Contact contact = new Contact();
+                            contact.setFirstName(prenom.getText().toString().trim());
+                            contact.setLastName(name.getText().toString().trim());
+                            contact.setJob(job.getText().toString().trim());
+                            contact.setEmail(email.getText().toString().trim());
+                            contact.setPhone(phone.getText().toString().trim());
+
+                            //create.setOnClickListener( );
+                        }
+                        dialog.dismiss();
+                    }
+                });
 
 
+                dialog.show();
             }
         });
+
+
+
+
+
+
 
 
         // shqred preferences pqrt
@@ -84,20 +132,11 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
                 },
                 1);
         if (isItFirstRun) {
-            // jsonFileString = getJsonFromAssets(getApplicationContext(), "data.json");
-            // createInternalFile(jsonFileString);
+
             //Load data
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("isItFirstRun", false);
             editor.apply();
-        } else {
-            try {
-
-                //  jsonFileString = sb.toString();
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -124,7 +163,6 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
         return true;
     }
 
-      //  Gson gson = new Gson();
 ////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -144,11 +182,16 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
             Intent myIntent = new Intent(MainActivity.this, EditActivity.class);
             myIntent.putExtra("ID",String.valueOf(contact.getID()));
             startActivity(myIntent);
+
+
         }
         public void RefreshListView(List<Contact> contacts){
             ContactsAdapter adapter = new ContactsAdapter(contacts,this,this,this);
             recyclerView.setAdapter(adapter);
         }
+
+
+
 
     }
 

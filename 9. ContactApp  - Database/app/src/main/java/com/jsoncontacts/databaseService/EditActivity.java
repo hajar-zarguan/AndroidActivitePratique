@@ -3,6 +3,7 @@ package com.jsoncontacts.databaseService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,10 +30,12 @@ public class EditActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         database=AppDataBase.getInstance(this);
         setContentView(R.layout.manage_contact);
-        firstName = (EditText) findViewById(R.id.name);
-        email = (EditText) findViewById(R.id.email);
-        phone = (EditText) findViewById(R.id.phone);
-        job = (EditText) findViewById(R.id.job);
+        firstName = (EditText) findViewById(R.id.name_edit);
+        lastName = (EditText) findViewById(R.id.prenom_edit);
+        email = (EditText) findViewById(R.id.email_edit);
+        phone = (EditText) findViewById(R.id.phone_Edittxt);
+        job = (EditText) findViewById(R.id.job_edit);
+        Button create = findViewById(R.id.create);
 
         Intent i = getIntent();
         if(i.hasExtra("ID")){
@@ -40,24 +43,19 @@ public class EditActivity  extends AppCompatActivity {
         }
         Contact contact = database.contactDAO().findByID(Integer.parseInt(string));
 
-
         firstName.setText(contact.getFirstName());
         lastName.setText(contact.getLastName());
         email.setText(contact.getEmail());
         phone.setText(contact.getPhone());
         job.setText(contact.getJob());
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        create.setText("modifier");
 
-                Intent myIntent = new Intent(EditActivity.this, MainActivity.class);
-                startActivity(myIntent);
-            }
-        });
+
 
     }
 
+
+    // edit
     public void save(View view){
 
         database.contactDAO().update(new Contact(Integer.parseInt(string),firstName.getText().toString(),lastName.getText().toString(),email.getText().toString(),job.getText().toString(),phone.getText().toString()));

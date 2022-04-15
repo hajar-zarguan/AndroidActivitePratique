@@ -6,8 +6,8 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
+        android:layout_width="366dp"
+        android:layout_height="499dp"
         android:layout_centerInParent="true"
         android:layout_marginBottom="12dp"
         android:background="@drawable/start"
@@ -23,10 +23,76 @@
             android:src="@drawable/user1"
             app:civ_border_color="#9b59b6"
             app:civ_border_width="2dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/call"
+                android:layout_width="30dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/call"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:padding="1dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/sms"
+                android:layout_width="30dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/sms"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:padding="1dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/update"
+                android:layout_width="30dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/update"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:padding="1dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="30dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/delete"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:padding="1dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="10sp" />
+        </LinearLayout>
+
 
 
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/name_edit"
             android:layout_width="match_parent"
             android:layout_height="34dp"
             android:layout_below="@id/photo"
@@ -36,16 +102,33 @@
             android:background="@drawable/edit_text_bg"
             android:elevation="3dp"
             android:gravity="center"
-            android:hint=" nom et prénom "
+            android:hint=" nom "
             android:inputType="text"
             android:padding="4dp"
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/prenom_edit"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:layout_below="@id/name"
+            android:layout_below="@id/name_edit"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="17dp"
+            android:background="@drawable/edit_text_bg"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:hint=" prénom "
+            android:inputType="text"
+            android:padding="4dp"
+            android:textSize="20sp" />
+
+
+        <EditText
+            android:id="@+id/email_edit"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_below="@id/prenom_edit"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="17dp"
@@ -58,10 +141,10 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/job"
+            android:id="@+id/job_edit"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:layout_below="@id/email"
+            android:layout_below="@id/email_edit"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="17dp"
@@ -73,12 +156,11 @@
             android:padding="4dp"
             android:textSize="20sp" />
 
-
         <EditText
-            android:id="@+id/phone"
+            android:id="@+id/phone_Edittxt"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:layout_below="@id/job"
+            android:layout_below="@id/job_edit"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="17dp"
@@ -90,21 +172,20 @@
             android:padding="4dp"
             android:textSize="20sp" />
 
-
         <Button
             android:id="@+id/create"
             android:layout_width="123dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/phone"
+            android:layout_below="@+id/phone_Edittxt"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="19dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="33dp"
             android:layout_marginRight="19dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/background_button"
             android:elevation="3dp"
             android:padding="4dp"
-            android:text="add"
+            android:text="ajouter"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />

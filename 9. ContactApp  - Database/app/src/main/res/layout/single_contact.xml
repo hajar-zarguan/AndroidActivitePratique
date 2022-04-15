@@ -15,6 +15,7 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp">
+
         <TextView
             android:id="@+id/ID"
             android:layout_width="match_parent"
@@ -38,7 +39,7 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:layout_width="149dp"
+            android:layout_width="202dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
@@ -47,23 +48,44 @@
 
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/name_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text=""
+                android:text="78665"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/description"
-                android:layout_width="match_parent"
+                android:id="@+id/job_txt"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text=""
+                android:text="78665"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/phone_txt"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="999"
                 android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/emailtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="78665"
+                android:textSize="10dp"
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -75,58 +97,13 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/call"
-                android:layout_width="30dp"
-                android:layout_height="22dp"
+                android:id="@+id/eye"
+                android:layout_width="27dp"
+                android:layout_height="29dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="2dp"
-                android:background="@drawable/call"
-                android:elevation="3dp"
-                android:gravity="center"
-                android:padding="1dp"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="10sp" />
-
-            <Button
-                android:id="@+id/sms"
-                android:layout_width="30dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/sms"
-                android:elevation="3dp"
-                android:gravity="center"
-                android:padding="1dp"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="10sp" />
-
-            <Button
-                android:id="@+id/update"
-                android:layout_width="30dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/update"
-                android:elevation="3dp"
-                android:gravity="center"
-                android:padding="1dp"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="10sp" />
-
-            <Button
-                android:id="@+id/delete"
-                android:layout_width="30dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/delete"
+                android:background="@drawable/eye"
                 android:elevation="3dp"
                 android:gravity="center"
                 android:padding="1dp"

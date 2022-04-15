@@ -3,6 +3,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     private MainActivity mainActivity;
     private Context ctx;
 
+
+
     public ContactsAdapter(List<Contact> contactsList, Activity context,SelectedContact selectedContact,MainActivity mainActivity) {
         this.contactsList = contactsList;
         this.mainActivity=mainActivity;
@@ -38,7 +42,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     @NonNull
     @Override
     public ContactsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         ctx=parent.getContext();
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.single_contact,parent,false);
         return new ViewHolder(view,ctx);
@@ -46,19 +49,17 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     }
 
     @NonNull
-
-
     @Override
     public void onBindViewHolder(@NonNull ContactsAdapter.ViewHolder holder, int position) {
         Contact contact=contactsList.get(position);
 
         database=AppDataBase.getInstance(context);
 
-       //  holder.id.setText(String.valueOf(contact.getID()));
-       // holder.email.setText(contact.getEmail());
-       // holder.job.setText(contact.getJob());
-//        holder.name.setText(contact.getFirstName()+" "+contact.getLastName());
-//        holder.phone.setText(contact.getPhone());
+        holder.id.setText(String.valueOf(contact.getID()));
+        holder.email.setText(contact.getEmail());
+        holder.job.setText(contact.getJob());
+        holder.name.setText(contact.getFirstName()+" "+contact.getLastName());
+       holder.phone.setText(contact.getPhone());
     }
 
 
@@ -67,6 +68,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         return contactsList.size();
     }
 
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
         TextView id, name, email,job,phone;
         Button btCall;
@@ -74,11 +76,13 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         public ViewHolder(@NonNull View itemView,Context context) {
             super(itemView);
             id=itemView.findViewById(R.id.ID);
-            name=itemView.findViewById(R.id.name);
-            email=itemView.findViewById(R.id.email);
-            job=itemView.findViewById(R.id.job);
-            phone=itemView.findViewById(R.id.phone);
+            name=itemView.findViewById(R.id.name_txt);
+            email=itemView.findViewById(R.id.emailtxt);
+            job=itemView.findViewById(R.id.job_txt);
+            phone=itemView.findViewById(R.id.phone_txt);
             btCall=itemView.findViewById(R.id.call);
+            Button sms=itemView.findViewById(R.id.sms);
+            Button delete = itemView.findViewById(R.id.delete);
             this.context=context;
             itemView.setOnLongClickListener(this::onLongClick);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -88,16 +92,22 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
                 }
             });
 
+
+
+
+
+
+
         }
+
         @Override
         public boolean onLongClick(View view) {
 
-
             AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
-            builder.setTitle("Select your answer")
-                    .setMessage("Do you want to delete this contact?")
+            builder.setTitle("sélectionner le contact")
+                    .setMessage("Est ce que vous voulez supprimer un élement?")
                     .setCancelable(false)
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    .setPositiveButton("oui", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             int idContact = Integer.parseInt(id.getText().toString());
