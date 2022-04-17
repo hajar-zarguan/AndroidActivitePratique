@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,11 +41,11 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
     List<Contact> contacts;
     LinearLayoutManager linearLayoutManager;
 
-    Contact contact1 = new Contact("Hajar", "Zarguan", "Ingénieur d'état", "0678119921", "hqjar.err98@gmail.com");
-    Contact contact2 = new Contact("Hiba", "Sadiki", "Technicien spécialisé", "0610969037", "hiba.sadiki@gmail.com");
+    Contact contact1 = new Contact("Abiw", "Zarguan", "Ingénieur d'état", "0678119921", "hajar.err98@gmail.com");
+    Contact contact2 = new Contact("Leila", "Sadiki", "Technicien spécialisé", "0610969037", "hiba.sadiki@gmail.com");
     Contact contact3 = new Contact("Houda", "Alaoui", "Ched de service", "0625867047", "houda.alaoui@gmail.com");
     Contact contact4 = new Contact("Siham", "lamine", "Directrice ", "0612345678", "siham.lamine@gmail.com");
-    Contact contact5 = new Contact("Lamia", "Aron", "Superviseur", "0612326598", "lamia.aron@gmail.com");
+   Contact contact5 = new Contact("Lamia", "Aron", "Superviseur", "0612326598", "lamia.aron@gmail.com");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +56,9 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
        // setSupportActionBar(toolbar);
 
         db = AppDataBase.getInstance(this);
+       // db.contactDAO().clear();
 
-        db.contactDAO().insert(contact1);
+       db.contactDAO().insert(contact1);
         db.contactDAO().insert(contact2);
         db.contactDAO().insert(contact3);
         db.contactDAO().insert(contact4);
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
                 EditText job = dialog.findViewById(R.id.job_edit);
                 EditText phone = dialog.findViewById(R.id.phone_Edittxt);
                 Button create = dialog.findViewById(R.id.create);
+
                 create.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -1,5 +1,4 @@
 package com.jsoncontacts.databaseService;
-
 import android.content.Context;
 
 
@@ -8,12 +7,10 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.jsoncontacts.models.Contact;
-
 @Database(entities = {Contact.class}, version = 1,exportSchema = false)
 public abstract class AppDataBase extends RoomDatabase {
         // create database instance
         private static AppDataBase database;
-
         // Define database name
         private static String DATABASE_NAME="db_Contact";
 
@@ -30,7 +27,6 @@ public abstract class AppDataBase extends RoomDatabase {
             // Return database
             return database;
         }
-
         //Create DAO
         public abstract ContactDao.ContactDAO contactDAO();
     }

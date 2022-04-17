@@ -21,15 +21,12 @@ import com.jsoncontacts.models.Contact;
 import java.util.List;
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
-
     private List<Contact> contactsList;
     private Context context;
     private AppDataBase database;
     private SelectedContact selectedContact;
     private MainActivity mainActivity;
     private Context ctx;
-
-
 
     public ContactsAdapter(List<Contact> contactsList, Activity context,SelectedContact selectedContact,MainActivity mainActivity) {
         this.contactsList = contactsList;
@@ -38,7 +35,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         this.context = context;
         notifyDataSetChanged();
     }
-
     @NonNull
     @Override
     public ContactsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -62,12 +58,10 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
        holder.phone.setText(contact.getPhone());
     }
 
-
     @Override
     public int getItemCount() {
         return contactsList.size();
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
         TextView id, name, email,job,phone;
@@ -80,9 +74,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
             email=itemView.findViewById(R.id.emailtxt);
             job=itemView.findViewById(R.id.job_txt);
             phone=itemView.findViewById(R.id.phone_txt);
-            btCall=itemView.findViewById(R.id.call);
-            Button sms=itemView.findViewById(R.id.sms);
-            Button delete = itemView.findViewById(R.id.delete);
+           // btCall=itemView.findViewById(R.id.call);
+            //Button sms=itemView.findViewById(R.id.sms);
+            //Button delete = itemView.findViewById(R.id.delete);
             this.context=context;
             itemView.setOnLongClickListener(this::onLongClick);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +96,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
 
         @Override
         public boolean onLongClick(View view) {
-
             AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
             builder.setTitle("sélectionner le contact")
                     .setMessage("Est ce que vous voulez supprimer un élement?")
@@ -133,7 +126,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
 
         }
     }
-
     public interface SelectedContact{
         void selectedContact(Contact contact);
     }
