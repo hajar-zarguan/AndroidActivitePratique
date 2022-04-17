@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity  implements ContactsAdapter.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       //  Toolbar toolbar = findViewById(R.id.toolbar);
-       //  Toolbar toolbar = findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
+       Toolbar toolbar = findViewById(R.id.toolbar);
+       toolbar.setTitle("");
+       setSupportActionBar(toolbar);
 
         db = AppDataBase.getInstance(this);
        // db.contactDAO().clear();

@@ -44,6 +44,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
 
     }
 
+
     @NonNull
     @Override
     public void onBindViewHolder(@NonNull ContactsAdapter.ViewHolder holder, int position) {
@@ -74,9 +75,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
             email=itemView.findViewById(R.id.emailtxt);
             job=itemView.findViewById(R.id.job_txt);
             phone=itemView.findViewById(R.id.phone_txt);
-           // btCall=itemView.findViewById(R.id.call);
-            //Button sms=itemView.findViewById(R.id.sms);
-            //Button delete = itemView.findViewById(R.id.delete);
+            Button call=itemView.findViewById(R.id.call);
+            Button sms=itemView.findViewById(R.id.sms);
+            Button delete = itemView.findViewById(R.id.delete);
             this.context=context;
             itemView.setOnLongClickListener(this::onLongClick);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +86,26 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
                     selectedContact.selectedContact(contactsList.get(getAdapterPosition()));
                 }
             });
-
+           /* call.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Contact contact = (Contact) view.getTag();
+                    Intent intent = new Intent(
+                            Intent.ACTION_CALL,
+                            Uri.parse("tel:" + contact.getPhone()));
+                    context.startActivity(intent);
+                }
+            });
+            sms.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Contact contact = (Contact) view.getTag();
+                    context.startActivity(new Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.fromParts("sms", contact.getPhone(), null)));
+                }
+            });
+*/
 
 
 
