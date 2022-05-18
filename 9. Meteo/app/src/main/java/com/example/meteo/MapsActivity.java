@@ -48,7 +48,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
             // Add a marker in Sydney and move the camera
             //LatLng sydney = new LatLng(-34, 151);
-            LatLng loc = new LatLng(33.7066, -7.3944);
+
+              double lon = Double.parseDouble(longitude);
+              double lat = Double.parseDouble(latitude);
+
+
+            LatLng loc = new LatLng(lat, lon);
             mMap.addMarker(new MarkerOptions().position(loc).title("Marker in "+ value));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
 

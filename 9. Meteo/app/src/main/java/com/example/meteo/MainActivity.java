@@ -69,32 +69,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, MapsActivity.class);
-                myIntent.putExtra("key", ville.getText()); //Optional parameters
-                myIntent.putExtra("latitude",latitude);
-                myIntent.putExtra("latitude",longitude);
-                MainActivity.this.startActivity(myIntent);
 
 
-            }
-        });
 
-        FloatingActionButton courbe = findViewById(R.id.courbe);
-        courbe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, Diagram.class);
-                myIntent.putExtra("key", ville.getText()); //Optional parameters
-                myIntent.putExtra("latitude",latitude);
-                myIntent.putExtra("latitude",longitude);
-                MainActivity.this.startActivity(myIntent);
-
-            }
-        });
 
     }
 
@@ -146,11 +123,14 @@ public class MainActivity extends AppCompatActivity {
                             String dateString=simpleDateFormat.format(date);
 
                             JSONObject main=jsonObject.getJSONObject("main");
+                            JSONObject coord=jsonObject.getJSONObject("coord");
                             int Temp=(int)(main.getDouble("temp")-273.15);
                             int TempMin=(int)(main.getDouble("temp_min")-273.15);
                             int TempMax=(int)(main.getDouble("temp_max")-273.15);
                             int Pression=(int)(main.getDouble("pressure"));
                             int Humidite=(int)(main.getDouble("humidity"));
+                            double lon=(coord.getDouble("lon"));
+                            double lat=(coord.getDouble("lat"));
 
                             JSONArray weather=jsonObject.getJSONArray("weather");
                             String meteo=weather.getJSONObject(0).getString("main");
@@ -167,6 +147,39 @@ public class MainActivity extends AppCompatActivity {
                             setImage(meteo);
                             Toast.makeText(co,meteo, Toast.LENGTH_LONG).show();
                             //Toast.makeText(getApplicationContext( ), response, Toast.LENGTH_LONG).show( );
+
+                            FloatingActionButton fab = findViewById(R.id.fab);
+                            fab.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent myIntent = new Intent(MainActivity.this, MapsActivity.class);
+                                    myIntent.putExtra("key", ville.getText()); //Optional parameters
+                                    longitude =  String.valueOf(lon);
+                                    latitude =  String.valueOf(lat);
+                                    myIntent.putExtra("longitude",  longitude);
+                                    myIntent.putExtra("latitude",latitude);
+                                    MainActivity.this.startActivity(myIntent);
+
+                                }
+                            });
+
+
+                            FloatingActionButton courbe = findViewById(R.id.courbe);
+                            courbe.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent myIntent = new Intent(MainActivity.this, Diagram.class);
+                                  // myIntent.putExtra("key", ville.getText()); //Optional parameters
+                                    myIntent.putExtra("ville",ville.getText());
+                                    longitude =  String.valueOf(lon);
+                                    latitude =  String.valueOf(lat);
+                                    myIntent.putExtra("longitude",  longitude);
+                                    myIntent.putExtra("latitude",latitude);
+                                    MainActivity.this.startActivity(myIntent);
+
+                                }
+                            });
+
 
 
                         } catch (JSONException e) {

@@ -2,6 +2,7 @@ package com.example.meteo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.jjoe64.graphview.GraphView;
@@ -16,9 +17,10 @@ import java.util.TimerTask;
 
 public class Diagram extends AppCompatActivity {
 
-    String value ;
+    String ville ;
     String longitude;
     String latitude;
+    TextView villeTxtV;
 
 
     @Override
@@ -26,14 +28,19 @@ public class Diagram extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diagramme);
         Intent intent = getIntent();
-        value = intent.getStringExtra("key");
+        ville = intent.getStringExtra("ville");
         longitude =  intent.getStringExtra("longitude");
         latitude = intent.getStringExtra("latitude");
+        double lon = Double.parseDouble(longitude);
+        double lat = Double.parseDouble(latitude);
+        villeTxtV = findViewById(R.id.villeTxtV) ;
+        villeTxtV.setText("Statistique d'humidité de "+ville);
 
 /*      GetData Mydata = new GetData();
         ArrayList<ArrayList<String> > lista = Mydata.getprevision();*/
         GraphView graph = (GraphView) findViewById(R.id.graphview);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[]{
+
 
                 new DataPoint(0, 14),
                 new DataPoint(1, 17),

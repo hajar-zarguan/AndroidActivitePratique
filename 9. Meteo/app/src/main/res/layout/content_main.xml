@@ -40,37 +40,39 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="#033447"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:fontFamily="casual"
-                />
-
-            <TextView
-                android:fontFamily="casual"
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#033447"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:fontFamily="casual"
                 android:id="@+id/temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="casual"
                 android:textSize="50dp"
+                android:text="C°"
                 android:textStyle="bold" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:textColor="#033447"
+                    android:textSize="20dp"
+                    android:text="Date"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="casual"
+                    android:textColor="#033447"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </TableRow>
 
         </TableRow>
 
