@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/background">
+    android:background = "@drawable/background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -23,5 +23,42 @@
 
     <include layout="@layout/content_main" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
 
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="80dp"
+        app:backgroundTint="@color/darkBlue"
+        app:layout_constraintBottom_toBottomOf="@+id/list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#FFFFFF"
+        app:srcCompat="@drawable/maps" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="80dp"
+        app:backgroundTint="@color/darkBlue"
+        app:layout_constraintBottom_toBottomOf="@+id/list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#FFFFFF"
+        app:srcCompat="@drawable/details" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/courbe"
+        android:layout_width="wrap_content"
+        android:layout_height="73dp"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="80dp"
+        app:backgroundTint="@color/darkBlue"
+        app:layout_constraintBottom_toBottomOf="@+id/list"
+        app:rippleColor="#FFFFFF"
+        app:srcCompat="@drawable/courbe" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

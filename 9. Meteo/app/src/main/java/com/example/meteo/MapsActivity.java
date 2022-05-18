@@ -3,6 +3,7 @@ package com.example.meteo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,18 +16,26 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.meteo.databinding.ActivityMapsBinding;
 
 
 
     public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
         private GoogleMap mMap;
+        String value ;
+        String longitude;
+        String latitude;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_maps);
+            Intent intent = getIntent();
+            value = intent.getStringExtra("key");
+            longitude =  intent.getStringExtra("longitude");
+            latitude = intent.getStringExtra("latitude");
+
+
             // Obtain the SupportMapFragment and get notified when the map is ready to be used.
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
@@ -39,11 +48,11 @@ import com.example.meteo.databinding.ActivityMapsBinding;
 
             // Add a marker in Sydney and move the camera
             //LatLng sydney = new LatLng(-34, 151);
-            LatLng mohamedia = new LatLng(33.7066, -7.3944);
-            mMap.addMarker(new MarkerOptions().position(mohamedia).title("Marker in Mohamedia"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(mohamedia));
+            LatLng loc = new LatLng(33.7066, -7.3944);
+            mMap.addMarker(new MarkerOptions().position(loc).title("Marker in "+ value));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
 
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mohamedia,12));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc,12));
             mMap.getUiSettings().setZoomControlsEnabled(true);
 
             mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {

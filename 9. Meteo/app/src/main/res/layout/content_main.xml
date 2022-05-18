@@ -7,7 +7,7 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main" >
+    tools:showIn="@layout/activity_main">
 
     <TextView
         android:id="@+id/txtville"
@@ -16,7 +16,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp"
+        android:fontFamily="casual"
         android:text="Ville"
+        android:textColor="#9C27B0"
         android:textSize="30dp"
         android:textStyle="bold" />
 
@@ -42,15 +44,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/white"
+                android:textColor="#033447"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="casual"
+                />
 
             <TextView
+                android:fontFamily="casual"
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="#033447"
                 android:textSize="20dp"
                 android:textStyle="bold" />
         </TableRow>
@@ -60,6 +65,7 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:fontFamily="casual"
                 android:id="@+id/temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,14 +84,15 @@
                 android:layout_height="wrap_content"
                 android:text="T° Min: "
                 android:textSize="20dp"
+                android:fontFamily="casual"
                 android:textStyle="bold"
-                android:textColor="@color/white"/>
+                android:textColor="#033447"/>
 
             <TextView
                 android:id="@+id/tempmin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="#033447"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:gravity="left"
@@ -102,14 +109,15 @@
                 android:layout_height="wrap_content"
                 android:text="T° Max :"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
+                android:textStyle="bold" android:fontFamily="casual"
+
+                android:textColor="#033447"/>
 
             <TextView
                 android:id="@+id/tempmax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="#033447"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:gravity="left"
@@ -127,13 +135,15 @@
                 android:text="Pression:"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:textColor="@color/white"/>
+                android:fontFamily="casual"
+
+                android:textColor="#033447"/>
 
             <TextView
                 android:id="@+id/pression"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="#033447"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:gravity="left"/>
@@ -148,15 +158,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Humidité:"
-                android:textColor="@color/white"
+                android:textColor="#033447"
                 android:textSize="20dp"
+                android:fontFamily="casual"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/humid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="#033447"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:gravity="left"

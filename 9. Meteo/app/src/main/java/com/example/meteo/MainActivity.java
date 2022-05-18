@@ -1,7 +1,11 @@
 package com.example.meteo;
 
+import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +15,7 @@ import android.os.StrictMode;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -22,6 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,7 +37,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-
     TextView ville;
     TextView tmp;
     TextView tmpmin;
@@ -39,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
     TextView txtpression;
     TextView txthumidite;
     TextView txtdate;
+
+    String latitude;
+    String longitude;
+
 
 
     @Override
@@ -50,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ImageView imgview=findViewById(R.id.img);
-        imgview.setImageResource(R.drawable.meteo);
+        imgview.setImageResource(R.drawable.cloudy);
 
         if (android.os.Build.VERSION.SDK_INT > 9)
         {
@@ -58,6 +67,34 @@ public class MainActivity extends AppCompatActivity {
                     StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
+
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, MapsActivity.class);
+                myIntent.putExtra("key", ville.getText()); //Optional parameters
+                myIntent.putExtra("latitude",latitude);
+                myIntent.putExtra("latitude",longitude);
+                MainActivity.this.startActivity(myIntent);
+
+
+            }
+        });
+
+        FloatingActionButton courbe = findViewById(R.id.courbe);
+        courbe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, Diagram.class);
+                myIntent.putExtra("key", ville.getText()); //Optional parameters
+                myIntent.putExtra("latitude",latitude);
+                myIntent.putExtra("latitude",longitude);
+                MainActivity.this.startActivity(myIntent);
+
+            }
+        });
 
     }
 
@@ -175,12 +212,12 @@ public class MainActivity extends AppCompatActivity {
             imgview.setImageResource(R.drawable.rainy);
         }
         else if(s.equals("Clear")){
-            imgview.setImageResource(R.drawable.clear);}
+            imgview.setImageResource(R.drawable.sunny);}
         else if(s.equals("Thunderstorm")) {
             imgview.setImageResource(R.drawable.thunderstorm);}
         else if(s.equals("Clouds"))
         {
-            imgview.setImageResource(R.drawable.cloudy);
+            imgview.setImageResource(R.drawable. atmospheric);
         }
     }
 
